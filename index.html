@@ -1,0 +1,7 @@
+<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>Send to Tesla</title></head><body style="font-family:-apple-system;text-align:center;padding-top:30vh">
+<a id="a" style="font-size:24px">Tap to send to Tesla</a>
+<script>
+var p=new URLSearchParams(location.search);var t=p.get('u')||('https://www.google.com/maps?q='+p.get('lat')+','+p.get('lng'));
+var s='shortcuts://run-shortcut?name='+encodeURIComponent('Set car navigation or url')+'&input=text&text='+encodeURIComponent(t);
+document.getElementById('a').href=s;location.href=s;
+</script></body></html>
