@@ -2,6 +2,6 @@
 <a id="a" style="font-size:24px">Tap to send to Tesla</a>
 <script>
 var p=new URLSearchParams(location.search);var t=p.get('u')||('https://www.google.com/maps?q='+p.get('lat')+','+p.get('lng'));
-var s='shortcuts://run-shortcut?name='+encodeURIComponent('Set car navigation or url')+'&input=text&text='+encodeURIComponent(t);
+var back=p.get('back')||'grokbot://app/v1/agent?id=20815A58-6218-4D2D-A7B8-0A27CEBACF8B';var s='shortcuts://x-callback-url/run-shortcut?name='+encodeURIComponent('Set car navigation or url')+'&input=text&text='+encodeURIComponent(t)+'&x-success='+encodeURIComponent(back)+'&x-cancel='+encodeURIComponent(back)+'&x-error='+encodeURIComponent(back);
 document.getElementById('a').href=s;location.href=s;
 </script></body></html>
