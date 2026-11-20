@@ -3,5 +3,5 @@
 <script>
 var p=new URLSearchParams(location.search);var t=p.get('u')||('https://www.google.com/maps?q='+p.get('lat')+','+p.get('lng'));
 var back=p.get('back')||'grokbot://app/v1/agent?id=20815A58-6218-4D2D-A7B8-0A27CEBACF8B';var s='shortcuts://x-callback-url/run-shortcut?name='+encodeURIComponent('Set car navigation or url')+'&input=text&text='+encodeURIComponent(t)+'&x-success='+encodeURIComponent(back)+'&x-cancel='+encodeURIComponent(back)+'&x-error='+encodeURIComponent(back);
-document.getElementById('a').href=s;location.href=s;
+document.getElementById('a').href=s;location.href=s;function bye(){try{window.close()}catch(e){}try{if(history.length>1)history.back()}catch(e){}setTimeout(function(){document.body.innerHTML='<p style="font:20px -apple-system;text-align:center;margin-top:40vh">Sent to Tesla. You can close this.</p>'},300)}var hid=false;document.addEventListener('visibilitychange',function(){if(document.hidden){hid=true}else if(hid){bye()}});window.addEventListener('pageshow',function(e){if(e.persisted)bye()});setTimeout(bye,2500);
 </script></body></html>
